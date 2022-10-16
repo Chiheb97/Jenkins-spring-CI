@@ -60,5 +60,6 @@ public class SecteurServiceImplTest {
     SecteurActivite s = new SecteurActivite((long) 12, "12", "secteur2", null);
     SecteurService.retrieveSecteurActivite((long)12);
     verify(secteurRepo).findById((long)12);
+    
   }
 }

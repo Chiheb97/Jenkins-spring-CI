@@ -3,7 +3,10 @@ package com.esprit.examen.services;
 import static org.junit.Assert.*;
 
 import java.text.ParseException;
+import java.util.List;
 import java.util.Optional;
+
+import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.verify;
 import com.esprit.examen.repositories.SecteurActiviteRepository;
 import org.junit.Test;
@@ -26,15 +29,16 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class SecteurServiceImplTest {
   @Autowired
-  @InjectMocks
   ISecteurActiviteService SecteurService;
+  
+   
   @Mock
   SecteurActiviteRepository secteurRepo ;
 
   @Test
   public void testAddSecteur() throws ParseException {
 
-    SecteurActivite sec = new SecteurActivite((long) 1, "122", "secteur 1", null);
+    SecteurActivite sec = new SecteurActivite(null , "122", "secteur 1", null);
     SecteurActivite secteur = SecteurService.addSecteurActivite(sec);
     System.out.print("secteur " + secteur);
     assertNotNull(secteur.getCodeSecteurActivite());
@@ -45,21 +49,26 @@ public class SecteurServiceImplTest {
 
   @Test
   public void testDeleteSecteur() {
-    SecteurActivite s = new SecteurActivite((long) 1, "122", "secteur2", null);
+    SecteurActivite s = new SecteurActivite(null, "122", "secteur2", null);
     SecteurActivite savedService = SecteurService.addSecteurActivite(s);
     SecteurService.deleteSecteurActivite(savedService.getIdSecteurActivite());
     assertNull(SecteurService.retrieveSecteurActivite(savedService.getIdSecteurActivite()));
   }
   @Test
   public void testRetreiveAllSecteurs(){
-    SecteurService.retrieveAllSecteurActivite();
-    verify(secteurRepo).findAll();
+	List<SecteurActivite> s =  SecteurService.retrieveAllSecteurActivite();
+	Mockito.when(secteurRepo.findAll()).thenReturn(s);
+
   }
   @Test
   public void testRetreiveSecteurById(){
-    SecteurActivite s = new SecteurActivite((long) 12, "12", "secteur2", null);
-    SecteurService.retrieveSecteurActivite((long)12);
-    verify(secteurRepo).findById((long)12);
+	SecteurActivite s = new SecteurActivite(null, "12", "secteur2", null);
+	Mockito.when(secteurRepo.findById(Mockito.anyLong())).thenReturn(Optional.of(s));
+    SecteurService.addSecteurActivite(s);
+    SecteurActivite sa = SecteurService.retrieveSecteurActivite(s.getIdSecteurActivite());
+    assertNotNull(sa);
+    log.info("get ==> " + sa.toString());
+
     
   }
 }

@@ -30,7 +30,7 @@ public class OperateurServiceUnitTest {
     assertNull(op.getNom());
     assertSame("benchebil", op.getNom());
     opService.deleteOperateur(op.getIdOperateur());
-
+    /* */
   }
 
 }

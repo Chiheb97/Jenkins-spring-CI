@@ -23,8 +23,8 @@ public class OperateurServiceUnitTest {
     operateur.setIdOperateur(2L);
     operateur.setFactures(null);
     operateur.setNom("benchebil2");
-    operateur.setPassword("password");
-    operateur.setPrenom("chiheb");
+    operateur.setPassword("password2");
+    operateur.setPrenom("chiheb2");
 
     Operateur op = new Operateur();
     assertNull(op.getNom());

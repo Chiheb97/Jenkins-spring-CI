@@ -39,7 +39,7 @@ public class ProduitServiceImpTest {
 	public void testDeleteProduit() throws ParseException {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		Date dateCreation = dateFormat.parse("16/06/2022");
-	    Produit pr = new Produit("11", dateCreation);
+	    Produit pr = new Produit(1L, "112", "libelle", (float)5.500, null, null, null, null, null);
 		Produit produit =iprodser.addProduit(pr);
 	    iprodser.deleteProduit(produit.getIdProduit());
 		assertNull(iprodser.retrieveProduit(produit.getIdProduit()));

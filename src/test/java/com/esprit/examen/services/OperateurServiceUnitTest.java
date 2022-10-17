@@ -24,7 +24,7 @@ public class OperateurServiceUnitTest {
     operateur.setFactures(null);
     operateur.setNom("benchebil22");
     operateur.setPassword("password22");
-    operateur.setPrenom("chiheb22");
+    operateur.setPrenom("chiheb222");
 
     Operateur op = new Operateur();
     assertNull(op.getNom());

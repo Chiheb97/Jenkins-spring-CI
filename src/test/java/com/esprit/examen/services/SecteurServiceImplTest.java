@@ -26,7 +26,6 @@ import lombok.extern.slf4j.Slf4j;
 @ExtendWith(MockitoExtension.class)
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@Slf4j
 public class SecteurServiceImplTest {
   @Autowired
   ISecteurActiviteService SecteurService;
@@ -70,7 +69,6 @@ public class SecteurServiceImplTest {
     SecteurService.addSecteurActivite(s);
     SecteurActivite sa = SecteurService.retrieveSecteurActivite(s.getIdSecteurActivite());
     assertNotNull(sa);
-    log.info("get ==> " + sa.toString());
 
     
   }

@@ -57,19 +57,5 @@ public class SecteurServiceImplTest {
     SecteurService.deleteSecteurActivite(savedService.getIdSecteurActivite());
     assertNull(SecteurService.retrieveSecteurActivite(savedService.getIdSecteurActivite()));
   }
-  @Test
-  public void testRetreiveAllSecteurs(){
-	List<SecteurActivite> s =  SecteurService.retrieveAllSecteurActivite();
-	Mockito.when(secteurRepo.findAll()).thenReturn(s);
-  }
-  @Test
-  public void testRetreiveSecteurById(){
-	SecteurActivite s = new SecteurActivite(null, "12", "secteur2", null);
-	Mockito.when(secteurRepo.findById(Mockito.anyLong())).thenReturn(Optional.of(s));
-    SecteurService.addSecteurActivite(s);
-    SecteurActivite sa = SecteurService.retrieveSecteurActivite(s.getIdSecteurActivite());
-    assertNotNull(sa);
-
-    
-  }
+ 
 }

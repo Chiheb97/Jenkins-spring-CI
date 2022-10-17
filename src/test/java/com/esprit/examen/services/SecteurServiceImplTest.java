@@ -25,7 +25,7 @@ import com.esprit.examen.entities.SecteurActivite;
 import lombok.extern.slf4j.Slf4j;
 @ExtendWith(MockitoExtension.class)
 @RunWith(SpringRunner.class)
-@SpringBootTest( classes = SecteurServiceImplTest.class )
+@SpringBootTest
 public class SecteurServiceImplTest {
   @Autowired
   ISecteurActiviteService SecteurService;

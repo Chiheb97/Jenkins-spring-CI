@@ -31,10 +31,14 @@ public class SecteurServiceImplTest {
   @Autowired
   ISecteurActiviteService SecteurService;
   
-   
+  @InjectMocks 
+  SecteurActiviteServiceImpl service;
+
   @Mock
   SecteurActiviteRepository secteurRepo ;
 
+
+  
   @Test
   public void testAddSecteur() throws ParseException {
 
@@ -58,7 +62,6 @@ public class SecteurServiceImplTest {
   public void testRetreiveAllSecteurs(){
 	List<SecteurActivite> s =  SecteurService.retrieveAllSecteurActivite();
 	Mockito.when(secteurRepo.findAll()).thenReturn(s);
-
   }
   @Test
   public void testRetreiveSecteurById(){

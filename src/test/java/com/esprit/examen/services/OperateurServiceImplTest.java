@@ -2,7 +2,7 @@ package com.esprit.examen.services;
 
 import org.junit.Test;
 
-import static org.junit.Assert.;
+import static org.junit.Assert.*;
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.eq;
 
@@ -55,32 +55,31 @@ public class OperateurServiceImplTest {
   private IOperateurService opService;
 
   @Test
-    public void testRetriveallOperateur() throws ParseException {
+  public void testRetriveallOperateur() throws ParseException {
     Operateur operateur = new Operateur();
     operateur.setIdOperateur(2L);
     operateur.setFactures(null);
     operateur.setNom("benchebil");
     operateur.setPassword("password");
     operateur.setPrenom("chiheb");
-    
+
     Operateur op = new Operateur();
     op.setIdOperateur(3L);
     op.setFactures(null);
-    
+
     op.setNom("benchebil2");
-    
+
     op.setPassword("password2");
-    
+
     op.setPrenom("chiheb2");
-    
-    
+
     ArrayList<Operateur> operateurs = new ArrayList<>();
-    operateurs.add(operateur);s
+    operateurs.add(operateur);
     operateurs.add(op);
     when(opRepository.findAll()).thenReturn(operateurs);
     List<Operateur> output = opService.retrieveAllOperateurs();
     assertEquals(2, output.size());
     assertSame(operateurs, output);
     verify(opRepository).findAll();
-    }
+  }
 }

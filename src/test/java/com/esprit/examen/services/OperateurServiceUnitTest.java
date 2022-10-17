@@ -22,13 +22,13 @@ public class OperateurServiceUnitTest {
     Operateur operateur = new Operateur();
     operateur.setIdOperateur(2L);
     operateur.setFactures(null);
-    operateur.setNom("benchebil");
+    operateur.setNom("benchebil2");
     operateur.setPassword("password");
     operateur.setPrenom("chiheb");
 
     Operateur op = new Operateur();
     assertNull(op.getNom());
-    assertSame("benchebil", op.getNom());
+    assertSame("benchebil2", op.getNom());
     opService.deleteOperateur(op.getIdOperateur());
     /* */
   }

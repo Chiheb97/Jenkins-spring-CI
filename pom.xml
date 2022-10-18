@@ -112,12 +112,20 @@
 				<artifactId>maven-resources-plugin</artifactId>
 				<version>3.1.0</version>
 			</plugin>
+			
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+			</plugin>
+			
+			
 		</plugins>
 	</build>
 
          <distributionManagement>
 		<repository>
-			<id>nexus-snapshots</id>
+			<id>ghada</id>
 			<url>http://192.168.137.48:8081/repository/maven-releases/</url>
 		</repository>
 	</distributionManagement>

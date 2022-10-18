@@ -5,7 +5,6 @@ import static org.junit.Assert.*;
 import java.text.ParseException;
 import java.util.List;
 import java.util.Optional;
-//ok
 import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.verify;
 import com.esprit.examen.repositories.SecteurActiviteRepository;

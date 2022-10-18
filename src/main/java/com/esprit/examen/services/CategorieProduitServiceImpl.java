@@ -24,7 +24,7 @@ public class CategorieProduitServiceImpl implements ICategorieProduitService {
 	@Override
 	public CategorieProduit addCategorieProduit(CategorieProduit cp) {
 		categorieProduitRepository.save(cp);
-		log.info("mise a jour");
+		log.info("ajout produit effectué");
 		
 		return cp;
 	}
@@ -39,6 +39,7 @@ public class CategorieProduitServiceImpl implements ICategorieProduitService {
 	public CategorieProduit updateCategorieProduit(CategorieProduit cp) {
 		categorieProduitRepository.save(cp);
 		log.info("mise a jour");
+		
 		return cp;
 	}
 

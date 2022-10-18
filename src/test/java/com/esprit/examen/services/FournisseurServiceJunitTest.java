@@ -1,4 +1,4 @@
-package com.esprit.examen.services;
+/* package com.esprit.examen.services;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.*;
 import java.util.List;
@@ -69,3 +69,4 @@ public class FournisseurServiceJunitTest {
     
 }
 
+*/

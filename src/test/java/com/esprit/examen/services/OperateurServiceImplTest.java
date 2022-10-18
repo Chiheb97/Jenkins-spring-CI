@@ -45,10 +45,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 public class OperateurServiceImplTest {
 
-  @MockBean
+  @Mock
   private OperateurRepository opRepository;
 
-  @Autowired
+  @InjectMocks
   private OperateurServiceImpl opServiceImpl;
 
   @Autowired

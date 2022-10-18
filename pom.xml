@@ -74,8 +74,12 @@
         </dependencies>
 
         <build>
+        
+        
                 <pluginManagement>
                         <plugins>
+                        
+                        
                                 <plugin>
                                         <groupId>org.apache.maven.plugins</groupId>
                                         <artifactId>maven-deploy-plugin</artifactId>
@@ -92,6 +96,10 @@
                         </plugins>
                 </pluginManagement>
                 <plugins>
+                <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+			</plugin>
                         <plugin>
                                 <groupId>org.apache.maven.plugins</groupId>
                                 <artifactId>maven-resources-plugin</artifactId>
@@ -116,5 +124,11 @@
                 </plugins>
 
         </build>
+<distributionManagement>
+		<repository>
+			<id>Alaa</id>
+			<url>http://192.168.1.11:8081/repository/maven-releases/</url>
+		</repository>
+	</distributionManagement>
 
 </project>

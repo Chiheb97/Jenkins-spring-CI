@@ -44,7 +44,6 @@ IReglementService regServ;
 
     @Test
    public void testRetrive() {
-    	//test of launch after push
             ArrayList<Reglement> reglementList = new ArrayList<>();
             when(rgrepo.findAll()).thenReturn(reglementList);
             List<Reglement> actualRetrieveAllRegResult = reglementServiceImpl.retrieveAllReglements();

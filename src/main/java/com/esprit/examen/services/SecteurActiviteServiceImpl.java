@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 import com.esprit.examen.entities.SecteurActivite;
 import com.esprit.examen.repositories.SecteurActiviteRepository;
 
+import lombok.extern.log4j.Log4j;
+
 @Service
 public class SecteurActiviteServiceImpl implements ISecteurActiviteService{
 
@@ -18,9 +20,10 @@ public class SecteurActiviteServiceImpl implements ISecteurActiviteService{
 	}
 
 	@Override
-	public SecteurActivite addSecteurActivite(SecteurActivite sa) {
-		secteurActiviteRepository.save(sa);
-		return sa;
+	public SecteurActivite addSecteurActivite(SecteurActivite saaa) {
+		secteurActiviteRepository.save(saaa);
+
+		return saaa;
 	}
 
 	@Override
@@ -32,6 +35,8 @@ public class SecteurActiviteServiceImpl implements ISecteurActiviteService{
 	@Override
 	public SecteurActivite updateSecteurActivite(SecteurActivite sa) {
 		secteurActiviteRepository.save(sa);
+	
+
 		return sa;
 	}
 

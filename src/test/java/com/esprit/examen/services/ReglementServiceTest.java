@@ -43,7 +43,7 @@ private FactureRepository facturerepo;
 IReglementService regServ;
 
     @Test
-   public void testRetrive() {
+   public void   testRetrive() {
             ArrayList<Reglement> reglementList = new ArrayList<>();
             when(rgrepo.findAll()).thenReturn(reglementList);
             List<Reglement> actualRetrieveAllRegResult = reglementServiceImpl.retrieveAllReglements();

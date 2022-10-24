@@ -40,7 +40,7 @@ pipeline {
   stage("DEPLOY") {
             steps {
 				
-                sh "mvn clean install deploy:deploy-file -DskipTests  -DgroupId=com.esprit.examen -DartifactId=tpAchatProject -Dversion=2.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/tpAchatProject-2.0.jar"
+                sh "mvn clean install deploy:deploy-file -DskipTests  -DgroupId=com.esprit.examen -DartifactId=tpAchatProject -Dversion=1.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/tpAchatProject-1.0.jar"
             }
         }
                stage("building docker image") {

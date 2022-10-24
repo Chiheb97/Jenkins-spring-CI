@@ -4,7 +4,7 @@ pipeline {
         stage("getting code from SCM ") {
             steps {
                 script {
-               checkout([$class: 'GitSCM', branches: [[name: '*/mohamed']], extensions: [], userRemoteConfigs: [[credentialsId: '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', url: 'https://github.com/Chiheb97/Jenkins-spring-CI.git']]])
+               checkout([$class: 'GitSCM', branches: [[name: '*/mohamed']], extensions: [], userRemoteConfigs: [[credentialsId: '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', url: 'https://github.com/Chiheb97/Jenkins-spring-CI.git']]])
                 }
             }
         }

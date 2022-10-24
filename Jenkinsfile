@@ -4,7 +4,7 @@ pipeline {
         stage("getting code from SCM ") {
             steps {
                 script {
-               checkout([$class: 'GitSCM', branches: [[name: '*/mohamed']], extensions: [], userRemoteConfigs: [[credentialsId: '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', url: 'https://github.com/Chiheb97/Jenkins-spring-CI.git']]])
+               checkout([$class: 'GitSCM', branches: [[name: '*/mohamed']], extensions: [], userRemoteConfigs: [[credentialsId: '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', url: 'https://github.com/Chiheb97/Jenkins-spring-CI.git']]])
                 }
             }
         }
@@ -37,15 +37,11 @@ pipeline {
                 }
             }
         }
- stage("publish to nexus") {
+  stage("DEPLOY") {
             steps {
-                script {
-                configFileProvider([configFile(fileId: 'mohamed', variable: 'setting')]) {
-                    sh 'mvn  -B -DskipTests deploy -s $setting'
-
-                         } 
-                        }
-                   }
+				
+                sh "mvn clean install deploy:deploy-file -DskipTests  -DgroupId=com.esprit.examen -DartifactId=tpAchatProject -Dversion=2.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/tpAchatProject-2.0.jar"
+            }
         }
             
     }   

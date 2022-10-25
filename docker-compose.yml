@@ -1,0 +1,25 @@
+services:
+  database:
+    image: mysql
+    container_name: mysql
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: yes
+      MYSQL_DATABASE: tpachato   
+    ports:
+      - 3306:3306
+    networks:
+     - testCI
+     
+  spring-boot:
+    image: mannai3/spring
+    container_name: springcontainer
+    ports:
+      - 8089:8089
+    depends_on:
+      - database
+    networks:
+      - testCI 
+    restart: on-failure     
+  
+networks:
+    testCI:

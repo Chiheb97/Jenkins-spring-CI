@@ -11,7 +11,7 @@ services:
      - testCI
      
   spring-boot:
-    image: mannai3/spring:fisttry
+    image: mannai3/spring:firsttry
     container_name: springcontainer
     ports:
       - 8089:8089

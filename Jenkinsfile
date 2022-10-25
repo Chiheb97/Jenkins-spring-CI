@@ -36,7 +36,7 @@ pipeline {
 
                 }
             }
-        } */
+        }
   stage("DEPLOY") {
             steps {
 				
@@ -51,7 +51,7 @@ pipeline {
             }
         }
         
-        
+         */
         stage("pushing image to docker hub") { 
              steps { 
                  script { 

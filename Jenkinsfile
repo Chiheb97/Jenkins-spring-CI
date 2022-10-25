@@ -8,7 +8,7 @@ pipeline {
                 }
             }
         }
-       /*  stage("cleaning code") {
+       stage("cleaning code") {
             steps {
                 script {
                    sh 'mvn -B -DskipTests clean '
@@ -29,7 +29,7 @@ pipeline {
                 }
             }
         }
-      stage("code QualityCheck Sonar") {
+    /*    stage("code QualityCheck Sonar") {
             steps {
                 script {
              sh " mvn sonar:sonar -Dsonar.projectKey=spring -Dsonar.host.url=http://192.168.1.105:9000   -Dsonar.login=130f1b9a120c51d6a0234fd6b519d1dab11ecc4a"
@@ -51,7 +51,7 @@ pipeline {
             }
         }
         
-         
+         */
         stage("test push docker hub") { 
              steps { 
                  script { 
@@ -62,7 +62,7 @@ pipeline {
                     }
                  } 
              } 
-         } */
+         } 
 	      
 	      stage("test docker compose ") {
             steps {

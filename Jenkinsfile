@@ -52,7 +52,7 @@ pipeline {
         }
         
          */
-        stage("pushing image to docker hub") { 
+        stage("test push docker hub") { 
              steps { 
                  script { 
                     withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
@@ -63,5 +63,13 @@ pipeline {
                  } 
              } 
          } 
+	      
+	      stage("test docker compose ") {
+            steps {
+                script {
+                  sh 'docker compose up -d '
+                }
+            }
+        }
     }   
 }
